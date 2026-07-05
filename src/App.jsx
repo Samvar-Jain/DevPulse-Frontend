@@ -47,7 +47,21 @@ function App() {
 }, [])
 
   if (loading) return <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">Loading...</div>
-  if (error) return <div className="min-h-screen bg-gray-900 text-red-400 flex items-center justify-center">{error}</div>
+
+if (error) {
+  return (
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center gap-4">
+      <h1 className="text-2xl font-bold">DevPulse Dashboard</h1>
+      <p className="text-gray-400">Please log in with GitHub to view your dashboard.</p>
+      
+      <a href="/oauth2/authorization/github"
+         className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold"
+      >
+        Login with GitHub
+      </a>
+    </div>
+  )
+}
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex">
@@ -62,6 +76,9 @@ function App() {
       <div className="flex-1 flex flex-col">
         <header className="bg-gray-800 border-b border-gray-700 p-4 flex items-center justify-between">
           <h1 className="text-xl font-bold">DevPulse Dashboard</h1>
+          <a href="/logout" className="text-sm text-gray-400 hover:text-white ml-4">
+            Logout
+          </a>
           <div className="flex gap-3 items-center text-sm">
             <input type="date" className="bg-gray-700 text-gray-200 rounded px-2 py-1 border border-gray-600" />
             <span className="text-gray-400">to</span>

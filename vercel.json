@@ -1,5 +1,7 @@
 {
   "rewrites": [
-    { "source": "/api/:path*", "destination": "https://devpulse-u8vr.onrender.com/api/:path*" }
+    { "source": "/api/:path*", "destination": "https://devpulse-u8vr.onrender.com/api/:path*" },
+    { "source": "/oauth2/:path*", "destination": "https://devpulse-u8vr.onrender.com/oauth2/:path*" },
+    { "source": "/login/:path*", "destination": "https://devpulse-u8vr.onrender.com/login/:path*" }
   ]
 }
